@@ -1,0 +1,11 @@
+<!-- Footer -->
+
+<footer class="page-width page-centre clear-fix">
+	<ul>
+		<% for (var i in theme.footerlinks){ %>
+			<li>
+				<a href="<%- theme.footerlinks[i].url ? url_for(theme.footerlinks[i].url) : url_for(theme.footerlinks[i]) %>"><%= i %></a>
+			</li>
+		<% } %>
+	</ul>
+</footer>

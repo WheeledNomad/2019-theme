@@ -1,0 +1,29 @@
+# Header
+menu:
+	Home: /
+	My Story: /about
+	Blog: /blog
+	FAQ: /faq
+
+# Footer
+footerlinks:
+	Copyright: /copyright
+
+# URL of the Home page image
+title-background: /images/title.jpg
+
+# Default post title
+default_post_title: Untitled
+
+# Google Analytics
+google_analytics:
+
+# Favicon
+favicon:
+
+# Social Media
+youtube: WheeledNomad
+twitter: WheeledNomad
+instagram: WheeledNomad
+facebook:
+tumblr:
