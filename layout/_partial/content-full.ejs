@@ -2,6 +2,12 @@
 
 <article class="page-width page-centre article-height">
 
+	<% if (item.youtube) { %>
+
+		<%- partial('_partial/embed-youtube', {item: page}) %>
+	
+		<% } %>
+
 	<%- item.content %>
 
 </article>
