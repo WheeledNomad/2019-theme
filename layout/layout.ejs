@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <% if(config.language) { %>lang="<%= config.language %>"<% } else { %>lang="en"<% }%>>
 
-	<!-- html head tag -->
+	<!-- html header tag -->
 	<%- partial('_partial/html/header') %>
 
 	<body>
@@ -14,6 +14,10 @@
 	
 		<div class="hoz-rule" id="hrHack">&nbsp;</div>
 	
+		<% if (page.title == 'Home') { %>
+			Live the days you can the ways you can
+		<% } %>
+
 		<!-- Main Content -->
 		<%- body %>
 	
@@ -23,6 +27,9 @@
 		<%- partial('_partial/socialmedia') %>
 		<%- partial('_partial/page-footer') %>
 
-	</body>
+		<!-- html footer tag -->
+		<%- partial('_partial/html/footer') %>
+	
+		</body>
 
 </html>
