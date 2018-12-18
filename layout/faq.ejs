@@ -1,1 +1,32 @@
-<h2>FAQ page layout placeholder</h2>
+<article>
+
+	<%- page.content %>
+
+	<% site.data.faq
+		.sort((a,b) => a.weight > b.weight)
+		.forEach(function (group) { %>
+
+		<h2><%- group.grouptitle %></h2>
+
+		<% if (group.description) { %>
+			<p><%- group.description %></p>
+		<% } %>
+	
+		<% group.questions
+			.sort((a,b) => a.weight > b.weight)
+			.forEach(function (item) { %>
+
+			<ul class="faqquestion">
+				<% if (item.question) { %>
+					<li>
+						<span class="faqqa">Q.</span><%- markdown(item.question) %>
+						<span class="faqqa">A.</span><%- markdown(item.answer) %>
+					</li>
+				<% } %>
+			</ul>
+
+		<% }) %>
+
+	<% }) %>
+
+</article>

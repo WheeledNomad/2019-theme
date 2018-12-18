@@ -1,5 +1,16 @@
 <!-- Content List View -->
-
 <li>
+    
+    <% 
+        if (item.image) {
+            var clip = item.path.length - 1;
+            var imagePath = "/images/" + item.path.substring(0, clip) + ".jpg";
+    %>
+    
+        <img src="<%- imagePath %>" alt="<%- item.imageAltText %>"></img>
+
+    <% } %>
+
     <a href="<%- config.root %><%- item.path %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
+
 </li>
