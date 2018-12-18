@@ -56,55 +56,58 @@
 
 <!-- Return to top and copyright / cc links -->
 
-	<span class="mdi mdi-arrow-collapse-up mdi-48px"></span>
+	<div id="returncopy">
+	
+		<a href="#page-top" alt="Return to top of page"><span class="mdi mdi-arrow-collapse-up mdi-48px"></span></a>
 
-	<ul id="licence">
-		<% if ((!page.licence) || (page.licence.includes('c'))) { %>
-			<li>
-				<span class="mdi mdi-copyright mdi-48px"></span>
-			</li>
-		<% } else { %>
-			<% if (page.licence.includes('cc')) { %>
+		<ul id="licence">
+			<% if ((!page.licence) || (page.licence.includes('c'))) { %>
 				<li>
-					<img src="/images/licence/cc.svg" alt="Creative Commons"></img>
+					<span class="mdi mdi-copyright mdi-48px"></span>
 				</li>
+			<% } else { %>
+				<% if (page.licence.includes('cc')) { %>
+					<li>
+						<img src="/images/licence/cc.svg" alt="Creative Commons"></img>
+					</li>
+				<% } %>
+				<% if (page.licence.includes('by')) { %>
+					<li>
+						<img src="/images/licence/by.svg" alt="Attribution"></img>
+					</li>
+				<% } %>
+				<% if (page.licence.includes('nc')) { %>
+					<li>
+						<img src="/images/licence/nc.svg" alt="No Commercial"></img>
+					</li>
+				<% } %>
+				<% if (page.licence.includes('sa')) { %>
+					<li>
+						<img src="/images/licence/sa.svg" alt="Share Alike"></img>
+					</li>
+				<% } %>
+				<% if (page.licence.includes('nd')) { %>
+					<li>
+						<img src="/images/licence/nd.svg" alt="No Derivatives"></img>
+					</li>
+				<% } %>
+				<% if (page.licence.includes('pd')) { %>
+					<li>
+						<img src="/images/licence/pd.svg" alt="Public Domain"></img>
+					</li>
+				<% } %>
+				<% if (page.licence.includes('sh')) { %>
+					<li>
+						<img src="/images/licence/sh.svg" alt="Share"></img>
+					</li>
+				<% } %>
+				<% if (page.licence.includes('rm')) { %>
+					<li>
+						<img src="/images/licence/rm.svg" alt="Remix"></img>
+					</li>
+				<% } %>
 			<% } %>
-			<% if (page.licence.includes('by')) { %>
-				<li>
-					<img src="/images/licence/by.svg" alt="Attribution"></img>
-				</li>
-			<% } %>
-			<% if (page.licence.includes('nc')) { %>
-				<li>
-					<img src="/images/licence/nc.svg" alt="No Commercial"></img>
-				</li>
-			<% } %>
-			<% if (page.licence.includes('sa')) { %>
-				<li>
-					<img src="/images/licence/sa.svg" alt="Share Alike"></img>
-				</li>
-			<% } %>
-			<% if (page.licence.includes('nd')) { %>
-				<li>
-					<img src="/images/licence/nd.svg" alt="No Derivatives"></img>
-				</li>
-			<% } %>
-			<% if (page.licence.includes('pd')) { %>
-				<li>
-					<img src="/images/licence/pd.svg" alt="Public Domain"></img>
-				</li>
-			<% } %>
-			<% if (page.licence.includes('sh')) { %>
-				<li>
-					<img src="/images/licence/sh.svg" alt="Share"></img>
-				</li>
-			<% } %>
-			<% if (page.licence.includes('rm')) { %>
-				<li>
-					<img src="/images/licence/rm.svg" alt="Remix"></img>
-				</li>
-			<% } %>
-		<% } %>
-	</ul>
+		</ul>
+	</div>
 
 </footer>
