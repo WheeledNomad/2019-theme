@@ -1,16 +1,20 @@
 <!-- Content List View -->
 <li>
-    
-    <% 
-        if (item.image) {
-            var clip = item.path.length - 1;
-            var imagePath = "/images/" + item.path.substring(0, clip) + ".jpg";
-    %>
-    
-        <img src="<%- imagePath %>" alt="<%- item.imageAltText %>"></img>
 
-    <% } %>
+    <a href="<%- config.root %><%- item.path %>">
+        <% 
+            if (item.image) {
+                var clip = item.path.length - 1;
+                var imagePath = "/images/" + item.path.substring(0, clip) + ".jpg";
+        %>
+        
+            <img src="<%- imagePath %>" alt="<%- item.imageAltText %>"></img>
 
-    <a href="<%- config.root %><%- item.path %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
+        <% } else { %>
+            <img src="/images/ImagePlaceHolder.svg" alt="There is no image for this blog post."></img>
+        <% } %>
+
+        <%- item.title || theme.default_post_title || "Untitled" %>
+    </a>
 
 </li>

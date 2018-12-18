@@ -14,7 +14,7 @@
 <h1><%- title ? titlecase(title.replace("-", " ")) : ''%></h1>
 
 <main>
-	<ul>
+	<ul id="archivelist">
 		<% page.posts
 			.filter((a) => !a.draft)
 			.forEach(function(item){ %>
