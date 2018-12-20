@@ -1,6 +1,23 @@
 article
+  
   img
-    width: 98%;
-    border-radius: 4px;
-    margin: 0 auto;
-    display: block;
+    width: 98%
+    border-radius: 4px
+    margin: 0 auto
+    display: block
+  
+  .article-tag-list
+    list-style-type: none
+    padding: 0
+    margin: 0 auto
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    width: 80%
+
+    li::after
+      content: ","
+      margin-right: .25rem
+    
+    li:last-child::after
+      content: ""

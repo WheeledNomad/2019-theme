@@ -2,7 +2,7 @@
 
 <article class="page-width page-centre article-height">
 
-	<% if (page.title != 'Home') { %>
+	<% if (item.title != 'Home') { %>
 		<h1><%- item.title %></h1>
 	<% } %>
 
@@ -24,5 +24,23 @@
 	<% } %>
 
 	<%- item.content %>
+
+	<div id="post-footer">
+		
+	<% if (item.date) { %>
+			<p>Written: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+		<% } %>	
+		
+		<% if (item.updated) { %>
+			<p>Updated: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+		<% } %>
+	
+		<% if (item.tags && item.tags.length){ %>
+			<%- list_tags(item.tags, {
+				show_count: false,
+				class: 'article-tag',
+				transform: (tag) => '#' + tag
+			}) %>
+		<% } %>
 
 </article>
