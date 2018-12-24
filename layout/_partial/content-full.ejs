@@ -25,22 +25,27 @@
 
 	<%- item.content %>
 
-	<div id="post-footer">
+	<% if (item.title != 'Home') { %>
+		<div id="post-footer">
 		
-	<% if (item.date) { %>
-			<p>Written: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
-		<% } %>	
+			<% if (item.date) { %>
+				<p>Written: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+			<% } %>	
+			
+			<% if (item.updated) { %>
+				<p>Updated: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+			<% } %>
+			
+			<% if (item.tags && item.tags.length){ %>
+				<%- list_tags(item.tags, {
+					show_count: false,
+					class: 'article-tag',
+					transform: (tag) => '#' + tag
+				}) %>
+			<% } %>
 		
-		<% if (item.updated) { %>
-			<p>Updated: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
-		<% } %>
-	
-		<% if (item.tags && item.tags.length){ %>
-			<%- list_tags(item.tags, {
-				show_count: false,
-				class: 'article-tag',
-				transform: (tag) => '#' + tag
-			}) %>
-		<% } %>
+		</div>
+
+	<% } %>
 
 </article>
