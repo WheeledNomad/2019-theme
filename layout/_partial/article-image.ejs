@@ -1,0 +1,7 @@
+<% 
+  if (item.image) {
+      var clip = item.path.length - 1;
+      var imagePath = "/images/" + item.path.substring(0, clip) + ".jpg";
+%>
+  <img src="<%- imagePath %>" alt="<%- item.imageAltText %>"></img>
+<% } %>

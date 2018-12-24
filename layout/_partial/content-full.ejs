@@ -1,51 +1,39 @@
 <!-- Content Full View-->
 
-<article class="page-width page-centre article-height">
+<article>
 
 	<% if (item.title != 'Home') { %>
 		<h1><%- item.title %></h1>
 	<% } %>
 
 	<% if (item.youtube) { %>
-
 		<%- partial('_partial/embed-youtube', {item: page}) %>
-	
 	<% } else { %>
-		<% 
-		if (item.image) {
-				var clip = item.path.length - 1;
-				var imagePath = "/images/" + item.path.substring(0, clip) + ".jpg";
-		%>
-
-		<img src="<%- imagePath %>" alt="<%- item.imageAltText %>"></img>
-
-		<% } %>
-	
+		<%- partial('_partial/article-image', {item: page}) %>
 	<% } %>
 
 	<%- item.content %>
-
-	<% if (item.title != 'Home') { %>
-		<div id="post-footer">
-		
-			<% if (item.date) { %>
-				<p>Written: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
-			<% } %>	
-			
-			<% if (item.updated) { %>
-				<p>Updated: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
-			<% } %>
-			
-			<% if (item.tags && item.tags.length){ %>
-				<%- list_tags(item.tags, {
-					show_count: false,
-					class: 'article-tag',
-					transform: (tag) => '#' + tag
-				}) %>
-			<% } %>
-		
-		</div>
-
-	<% } %>
-
 </article>
+
+<% if (item.title != 'Home') { %>
+	<aside id="post-footer">
+		<%- partial('_partial/article-image', {item: page}) %>
+		
+		<% if (item.date) { %>
+			<p>Written: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+		<% } %>	
+		
+		<% if (item.updated) { %>
+			<p>Updated: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+		<% } %>
+		
+		<% if (item.tags && item.tags.length){ %>
+			<%- list_tags(item.tags, {
+				show_count: false,
+				class: 'article-tag',
+				transform: (tag) => '#' + tag
+			}) %>
+		<% } %>
+
+	</aside>
+<% } %>

@@ -21,3 +21,16 @@ article
     
     li:last-child::after
       content: ""
+
+aside
+  img
+    display: none
+
+// Swap where we put the image on the desktop layout
+@media screen and (min-width: 600px)
+  article
+    img
+      display: none
+  aside
+    img
+      display: block
