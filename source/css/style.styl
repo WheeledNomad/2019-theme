@@ -1,27 +1,33 @@
 // globals
 
-perforation = 2px grey dotted;
-
-// imports
-
-@import "header.styl";
-@import "menu.styl";
-@import "archive.styl";
-@import "page.styl";
-@import "faq.styl"
-@import "footer.styl";
+perforation = 2px grey dotted
 
 // site frame
 
 html
-  background: grey;
+  background: grey
 
 body
-  padding: 2px;
-  border-radius: 4px;
-  margin: 4px;
-  background: white;
+  padding: 2px
+  border-radius: 4px
+  margin: 4px
+  background: white
 
 iframe 
   display: block
   margin: 10px auto 10px auto
+
+a
+  text-decoration: none
+
+a:visited
+  color: blue
+
+// imports
+
+@import "header.styl"
+@import "menu.styl"
+@import "archive.styl"
+@import "page.styl"
+@import "faq.styl"
+@import "footer.styl"
