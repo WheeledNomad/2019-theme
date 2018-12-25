@@ -1,9 +1,9 @@
 <!-- Page Layout (page.ejs) -->
-<main>
+<% if (page.title == 'Home') { %>
+  <div id="tagline">Live the days you can the ways you can</div>
+<% } %>
 
-  <% if (page.title == 'Home') { %>
-    Live the days you can the ways you can
-  <% } %>
+<main>
 
   <%- partial('_partial/content-full', {item: page}) %>
 
