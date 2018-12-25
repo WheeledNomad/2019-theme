@@ -1,0 +1,22 @@
+<% if (item.title != 'Home') { %>
+  <aside id="post-footer">
+    <%- partial('_partial/article-image', {item: page}) %>
+    
+    <% if (item.date) { %>
+      <p>Written: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+    <% } %>	
+    
+    <% if (item.updated) { %>
+      <p>Updated: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
+    <% } %>
+    
+    <% if (item.tags && item.tags.length){ %>
+      <%- list_tags(item.tags, {
+        show_count: false,
+        class: 'article-tag',
+        transform: (tag) => '#' + tag
+      }) %>
+    <% } %>
+
+  </aside>
+<% } %>

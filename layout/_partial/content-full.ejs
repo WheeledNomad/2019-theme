@@ -1,39 +1,24 @@
 <!-- Content Full View-->
 
-<article>
+<main> 
+	<article>
 
-	<% if (item.title != 'Home') { %>
-		<h1><%- item.title %></h1>
-	<% } %>
-
-	<% if (item.youtube) { %>
-		<%- partial('_partial/embed-youtube', {item: page}) %>
-	<% } else { %>
-		<%- partial('_partial/article-image', {item: page}) %>
-	<% } %>
-
-	<%- item.content %>
-</article>
-
-<% if (item.title != 'Home') { %>
-	<aside id="post-footer">
-		<%- partial('_partial/article-image', {item: page}) %>
-		
-		<% if (item.date) { %>
-			<p>Written: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
-		<% } %>	
-		
-		<% if (item.updated) { %>
-			<p>Updated: <%- date(item.updated, 'Do MMMM, YYYY') %></p>
-		<% } %>
-		
-		<% if (item.tags && item.tags.length){ %>
-			<%- list_tags(item.tags, {
-				show_count: false,
-				class: 'article-tag',
-				transform: (tag) => '#' + tag
-			}) %>
+		<% if (item.title != 'Home') { %>
+			<h1><%- item.title %></h1>
 		<% } %>
 
-	</aside>
-<% } %>
+		<% if (item.youtube) { %>
+			<%- partial('_partial/embed-youtube', {item: page}) %>
+		<% } else { %>
+			<%- partial('_partial/article-image', {item: page}) %>
+		<% } %>
+
+		<%- item.content %>
+
+	</article>
+	
+	<!-- Sidebar is below in mobile view to the side in desktop -->
+	
+	<%- partial('_partial/sidebar', {item: page}) %>
+
+</main>
