@@ -1,3 +1,10 @@
 <!-- Page Layout (page.ejs) -->
+<main>
 
-<%- partial('_partial/content-full', {item: page}) %>
+  <% if (page.title == 'Home') { %>
+    Live the days you can the ways you can
+  <% } %>
+
+  <%- partial('_partial/content-full', {item: page}) %>
+
+</main>

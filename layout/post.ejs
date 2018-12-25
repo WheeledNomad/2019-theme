@@ -1,3 +1,11 @@
 <!-- Post Laytout (post.ejs) -->
 
-<%- partial('_partial/content-full', {item: page}) %>
+<main>
+
+  <%- partial('_partial/content-full', {item: page}) %>
+
+	<!-- Sidebar is below in mobile view to the side in desktop -->
+	
+	<%- partial('_partial/sidebar', {item: page}) %>
+
+</main>

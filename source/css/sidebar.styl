@@ -1,0 +1,31 @@
+aside
+  img
+    width: 240px
+    border-radius: 4px
+    margin: 0 auto
+
+  .article-tag-list
+    list-style-type: none
+    padding: 0
+    margin: 0 auto
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    width: 80%
+
+    li::after
+      content: ","
+      margin-right: .25rem
+    
+    li:last-child::after
+      content: ""
+
+  img
+    display: none
+
+@media screen and (min-width: 600px)
+  aside
+    max-width: 12rem
+    margin-left: 1rem
+    img
+      display: block

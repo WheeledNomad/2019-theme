@@ -5,32 +5,17 @@ article
     border-radius: 4px
     margin: 0 auto
     display: block
-  
-  .article-tag-list
-    list-style-type: none
-    padding: 0
-    margin: 0 auto
-    display: flex
-    justify-content: flex-start
-    flex-wrap: wrap
-    width: 80%
-
-    li::after
-      content: ","
-      margin-right: .25rem
-    
-    li:last-child::after
-      content: ""
-
-aside
-  img
-    display: none
 
 // Swap where we put the image on the desktop layout
 @media screen and (min-width: 600px)
+  main
+    padding: 0 4px
+    display: flex
+
+    article
+      h1
+        margin-top: 0
+  
   article
     img
       display: none
-  aside
-    img
-      display: block

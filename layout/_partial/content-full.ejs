@@ -1,24 +1,17 @@
 <!-- Content Full View-->
 
-<main> 
-	<article>
+<article>
 
-		<% if (item.title != 'Home') { %>
-			<h1><%- item.title %></h1>
-		<% } %>
+	<% if (item.title != 'Home') { %>
+		<h1><%- item.title %></h1>
+	<% } %>
 
-		<% if (item.youtube) { %>
-			<%- partial('_partial/embed-youtube', {item: page}) %>
-		<% } else { %>
-			<%- partial('_partial/article-image', {item: page}) %>
-		<% } %>
+	<% if (item.youtube) { %>
+		<%- partial('_partial/embed-youtube', {item: page}) %>
+	<% } else { %>
+		<%- partial('_partial/article-image', {item: page}) %>
+	<% } %>
 
-		<%- item.content %>
+	<%- item.content %>
 
-	</article>
-	
-	<!-- Sidebar is below in mobile view to the side in desktop -->
-	
-	<%- partial('_partial/sidebar', {item: page}) %>
-
-</main>
+</article>
