@@ -20,4 +20,18 @@
 .menuhidden
   display: none !important
 
+@media screen and (min-width: 600px)
+  .menuhidden
+    display: block !important
 
+  #menu-toggle
+    display: none
+
+  #site-menu
+    ul
+      flex-direction: row
+      margin: 4px
+    a, a:visited
+      border: none
+      width: 100px
+      padding: 0 8px
